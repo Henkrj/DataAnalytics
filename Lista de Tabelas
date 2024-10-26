@@ -1,0 +1,77 @@
+Lista de Tabelas e Descrições
+
+1. constructors
+Descrição: Armazena informações sobre cada construtor/equipe.
+Chave Primária (PK): constructorId — Identificador único do construtor.
+
+
+2. circuits
+Descrição: Contém dados geográficos e descritivos dos circuitos onde as corridas acontecem.
+Chave Primária (PK): circuitId — Identificador único do circuito.
+
+
+3. constructor_results
+Descrição: Guarda os resultados de cada construtor por corrida.
+Chave Primária (PK): constructorResultsId.
+Chave Estrangeira (FK): raceId (liga-se à tabela races), constructorId (liga-se à tabela constructors).
+
+
+4. constructor_standings
+Descrição: Armazena as classificações de cada construtor em determinada corrida.
+Chave Primária (PK): constructorStandingsId.
+Chave Estrangeira (FK): raceId (liga-se à tabela races), constructorId (liga-se à tabela constructors).
+
+
+5. driver_standings
+Descrição: Guarda as classificações dos pilotos em cada corrida.
+Chave Primária (PK): driverStandingsId.
+Chave Estrangeira (FK): raceId (liga-se à tabela races), driverId (liga-se à tabela drivers).
+
+
+6. drivers
+Descrição: Armazena informações pessoais e de identificação dos pilotos.
+Chave Primária (PK): driverId.
+
+
+7. lap_times
+Descrição: Guarda o tempo de cada volta realizada por cada piloto em cada corrida.
+Chaves Estrangeiras (FK): raceId e driverId.
+
+
+8. pit_stops
+Descrição: Contém informações sobre as paradas nos boxes de cada piloto por corrida.
+Chaves Estrangeiras (FK): raceId e driverId.
+
+
+9. qualifying
+Descrição: Armazena dados das sessões de qualificação para determinar a ordem de largada.
+Chave Primária (PK): qualifyId.
+Chaves Estrangeiras (FK): raceId, driverId, constructorId.
+
+
+10. races
+Descrição: Contém os detalhes de cada corrida, incluindo data, horário, e local.
+Chave Primária (PK): raceId.
+Chave Estrangeira (FK): circuitId e year (referente a seasons).
+
+
+11. results
+Descrição: Guarda os resultados detalhados de cada piloto em cada corrida.
+Chave Primária (PK): resultId.
+Chaves Estrangeiras (FK): raceId, driverId, constructorId, statusId.
+
+
+12. seasons
+Descrição: Armazena informações sobre as temporadas de corrida.
+Chave Primária (PK): year.
+
+
+13. sprint_results
+Descrição: Guarda resultados das corridas do tipo sprint.
+Chave Primária (PK): resultId.
+Chaves Estrangeiras (FK): raceId, driverId, constructorId, statusId.
+
+
+14. status
+Descrição: Define os status possíveis dos resultados de corrida.
+Chave Primária (PK): statusId.
