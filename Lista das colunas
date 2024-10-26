@@ -1,0 +1,127 @@
+# Lista de Colunas e Detalhes
+Cada coluna da tabela é descrita abaixo, com especificação das chaves primárias e estrangeiras (PK e FK) conforme necessário:
+
+Tabela: constructors
+constructorId (PK): Identificador único do construtor.
+constructorRef: Referência curta do construtor.
+name: Nome do construtor.
+nationality: Nacionalidade da equipe.
+url: Link com mais informações.
+
+
+Tabela: circuits
+circuitId (PK): Identificador único do circuito.
+circuitRef: Referência curta do circuito.
+name: Nome do circuito.
+location: Localização (cidade).
+country: País.
+lat, lng, alt: Coordenadas e altitude.
+url: Link com mais informações.
+
+
+Tabela: constructor_results
+constructorResultsId (PK): Identificador único dos resultados do construtor.
+raceId (FK): Referência para a corrida.
+constructorId (FK): Referência para o construtor.
+points: Pontos ganhos pelo construtor na corrida.
+status: Status do resultado.
+
+
+Tabela: constructor_standings
+constructorStandingsId (PK): Identificador único da classificação.
+raceId (FK): Referência para a corrida.
+constructorId (FK): Referência para o construtor.
+points: Pontos acumulados.
+position: Posição do construtor.
+positionText: Texto descritivo da posição.
+wins: Número de vitórias.
+
+
+Tabela: driver_standings
+driverStandingsId (PK): Identificador único da classificação.
+raceId (FK): Referência para a corrida.
+driverId (FK): Referência para o piloto.
+points: Pontos acumulados.
+position: Posição do piloto.
+positionText: Texto descritivo da posição.
+wins: Número de vitórias.
+
+
+Tabela: drivers
+driverId (PK): Identificador único do piloto.
+driverRef: Referência curta do piloto.
+number, code: Número e código do piloto.
+forename, surname: Nome e sobrenome.
+dob: Data de nascimento.
+nationality: Nacionalidade.
+url: Link com mais informações.
+
+
+Tabela: lap_times
+raceId (FK): Referência para a corrida.
+driverId (FK): Referência para o piloto.
+lap: Número da volta.
+position: Posição do piloto.
+time, milliseconds: Tempo de volta.
+
+
+Tabela: pit_stops
+raceId (FK): Referência para a corrida.
+driverId (FK): Referência para o piloto.
+stop: Número da parada.
+lap: Volta em que ocorreu a parada.
+time, duration, milliseconds: Tempo de parada.
+
+
+Tabela: qualifying
+qualifyId (PK): Identificador único da sessão de qualificação.
+raceId (FK): Referência para a corrida.
+driverId (FK): Referência para o piloto.
+constructorId (FK): Referência para o construtor.
+number: Número do piloto.
+position: Posição de largada.
+q1, q2, q3: Tempos das sessões qualificatórias.
+
+
+Tabela: races
+raceId (PK): Identificador único da corrida.
+year (FK): Referência para a temporada.
+round: Número da rodada.
+circuitId (FK): Referência para o circuito.
+name: Nome da corrida.
+date, time: Data e hora.
+fp1_date, fp1_time, fp2_date, fp2_time, fp3_date, fp3_time: Datas e horários de práticas.
+quali_date, quali_time, sprint_date, sprint_time: Datas e horários de qualificações e sprints.
+url: Link com mais informações.
+
+
+Tabela: results
+resultId (PK): Identificador único do resultado.
+raceId (FK): Referência para a corrida.
+driverId (FK): Referência para o piloto.
+constructorId (FK): Referência para o construtor.
+number, grid, position, positionOrder: Dados de largada e chegada.
+points, laps, time, milliseconds: Dados de pontuação e tempo.
+fastestLap, rank, fastestLapTime, fastestLapSpeed: Estatísticas da volta mais rápida.
+statusId (FK): Status da corrida.
+
+
+Tabela: seasons
+year (PK): Ano da temporada.
+url: Link com mais informações.
+
+
+Tabela: sprint_results
+resultId (PK): Identificador único do resultado.
+raceId (FK): Referência para a corrida.
+driverId (FK): Referência para o piloto.
+constructorId (FK): Referência para o construtor.
+number, grid, position, positionOrder: Dados de largada e chegada.
+points, laps, time, milliseconds: Dados de pontuação e tempo.
+fastestLap, fastestLapTime: Estatísticas da volta mais rápida.
+statusId (FK): Status do resultado.
+
+
+Tabela: status
+statusId (PK): Identificador único do status.
+status: Descrição do status.
