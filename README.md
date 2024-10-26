@@ -4,12 +4,12 @@ CoderHouse Course
 Criação do Projeto do curso de Data Analytics CoderHouse. 
 
 
-Objetivo do projeto:
+# Objetivo do projeto:
 Desenvolver um Dashboard de Análise Estratégica que forneça insights sobre o desempenho de pilotos, construtores, e corridas ao longo das temporadas. 
 O dashboard deve apresentar visualizações estratégicas que auxiliem na tomada de decisões e no entendimento de tendências ao longo do tempo, com foco em dados como classificação de pilotos, desempenho de equipes, detalhes de corridas, e estatísticas de performance.
 
-Escopo do Projeto
-O dashboard incluirá:
+# Escopo do Projeto
+O Dashboard incluirá:
 
 Análise de Performance dos Pilotos: classificação de pilotos por corrida e temporada, estatísticas de voltas mais rápidas, posições de largada e chegada.
 Desempenho dos Construtores: rankings de construtores por temporada, resultados em corridas específicas e análise de pontos acumulados.
@@ -17,24 +17,30 @@ Detalhes e Resultados de Corridas: resumo das corridas com classificação final
 Estatísticas de Temporada e Circuitos: comparação entre temporadas e análise das pistas, com detalhes geográficos e de altitude que impactam as corridas.
 
 
-Usuário Final e Nível de Aplicação da Análise
+# Usuário Final e Nível de Aplicação da Análise
 Usuário Final: Executivos e analistas estratégicos da equipe de esportes de motor, interessados em entender tendências e otimizar a performance.
+
 Nível de Análise: Estratégico, com o objetivo de obter insights de longo prazo para a tomada de decisões e melhoria de performance.
-Diagrama de entidade-relacionamento das tabelas que contêm as informações a serem analisadas.
 
-Lista de Tabelas e Descrições
-1. constructors
-Descrição: Armazena informações sobre cada construtor/equipe.
-Chave Primária (PK): constructorId — Identificador único do construtor.
+# Diagrama de entidade-relacionamento das tabelas que contêm as informações a serem analisadas.
 
-2. circuits
-Descrição: Contém dados geográficos e descritivos dos circuitos onde as corridas acontecem.
-Chave Primária (PK): circuitId — Identificador único do circuito.
+![MER_F1](https://github.com/user-attachments/assets/32be2d81-0ec0-4fc4-a66d-5e07cd9424dc)
 
-3. constructor_results
-Descrição: Guarda os resultados de cada construtor por corrida.
+
+
+
+# Lista de Tabelas e Descrições
+<li>Constructors: Armazena informações sobre cada construtor/equipe.
+Chave Primária (PK): constructorId — Identificador único do construtor.</li>
+
+<li>Circuits: Contém dados geográficos e descritivos dos circuitos onde as corridas acontecem.
+
+ 
+Chave Primária (PK): circuitId — Identificador único do circuito.</li>
+
+<li>constructor_results: Guarda os resultados de cada construtor por corrida.
 Chave Primária (PK): constructorResultsId.
-Chave Estrangeira (FK): raceId (liga-se à tabela races), constructorId (liga-se à tabela constructors).
+Chave Estrangeira (FK): raceId (liga-se à tabela races), constructorId (liga-se à tabela constructors).</li>
 
 4. constructor_standings
 Descrição: Armazena as classificações de cada construtor em determinada corrida.
@@ -86,9 +92,9 @@ Chaves Estrangeiras (FK): raceId, driverId, constructorId, statusId.
 Descrição: Define os status possíveis dos resultados de corrida.
 Chave Primária (PK): statusId.
 
----------
 
-Lista de Colunas e Detalhes
+
+# Lista de Colunas e Detalhes
 Cada coluna da tabela é descrita abaixo, com especificação das chaves primárias e estrangeiras (PK e FK) conforme necessário:
 
 Tabela: constructors
